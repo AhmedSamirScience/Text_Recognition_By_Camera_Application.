@@ -10,24 +10,7 @@ import static wallpaperphptos.macospace.com.ninetta.SplashScreen_Content.SplashS
 
 public class FullScreenActivity extends AppCompatActivity {
 
-    private VideoView videoView= null ;
-    private MediaController mController;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_full_screen);
-
-
-        videoView = (VideoView) findViewById(R.id.videoView) ;
-        mController = new MediaController(FullScreenActivity.this);
-        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.mv);
-        mController = new FullScreenMediaController(FullScreenActivity.this, 2);
-        mController.setAnchorView(videoView);
-        videoView.setMediaController(mController);
-        videoView.seekTo(stopPosition);
-        videoView.start(); //Or use resume() if it doesn't work. I'm not sure
-    }
-
+    
     @Override
     protected void onResume() {
         super.onResume();
